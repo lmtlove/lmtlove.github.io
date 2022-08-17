@@ -24,12 +24,12 @@
 
   
 
-  <title>Hexo 一键部署Git | Like MT</title>
+  <title>Message | Like MT</title>
 
   
 
   
-    <link rel="shortcut icon" href="../../../../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
   
 
   
@@ -47,7 +47,7 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container post">
+<header class="header-container">
   
     <div class="post-image" style="background-image: url(https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg)"></div>
   
@@ -57,7 +57,7 @@
   <div class="navbar-content">
     <!-- logo -->
     <div class="navbar-logo">
-      <a href="../../../../index.html">
+      <a href="../index.html">
         
           Like MT
         
@@ -72,7 +72,7 @@
       </div>
       <ul class="navbar-list">
         
-          <li class="navbar-list-item"><a href="../../../../index.html">首页</a></li>
+          <li class="navbar-list-item"><a href="../index.html">首页</a></li>
         
       </ul>
     </div>
@@ -93,106 +93,49 @@
 
   
   
-    <div class="header-content">
-      <div class="post-text layout-block">
-        <div class="layout-margin">
-          <h1 class="title-wrap">Hexo 一键部署Git</h1>
-          <h2 class="title-sub-wrap">
-            <strong>Like Mt</strong>
-            <span>发布于</span>
-            <time  class="article-date" datetime="2022-07-25T02:58:57.416Z" itemprop="datePublished">2022-07-25</time>
-          </h2>
-          <ul class="wrap-list dark">
-  
-    <li><a href="../../../../categories/hexo/">📒 hexo</a></li>
-  
-</ul>
-          <ul class="wrap-list dark">
-  
-    <li><a href="../../../../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/">🏷️ 安装hexo并部署git</a></li>
-  
-</ul>
-        </div>
-      </div>
-    </div>
-  
 
   
+  
+    <div class="header-content">
+      <div class="post-text layout-block layout-padding">
+        <h1 class="title-wrap">Message</h1>
+        
+      </div>
+    </div>
   
   
 </header>
 
-    <!-- 文章 -->
+    <!-- 分页(其他自定义页面) -->
 
-<!-- 文章内容 -->
+<!-- 自定义页面 -->
+
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
-      
-      
-      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="hexo-文档"><a href="#hexo-文档" class="headerlink" title="hexo 文档"></a>hexo 文档</h3><a href='https://hexo.io/zh-cn/docs/' target="_blank">
-https://hexo.io/zh-cn/docs/</a>
-
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>全局安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window  npm install -g hexo-cli</span><br><span class="line">MAC sudo npm install hexo-cli</span><br></pre></td></tr></table></figure>
-<p>局部安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建hexo文件"><a href="#创建hexo文件" class="headerlink" title="创建hexo文件"></a>创建hexo文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;名称&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;名称&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h3 id="依赖与配置文件"><a href="#依赖与配置文件" class="headerlink" title="依赖与配置文件"></a>依赖与配置文件</h3><p>(1) 依赖<br>为了正常部署到远程 Git 仓库，我们还需要先安装一个 Hexo 插件 hexo-deployer-git。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>(2) 配置文件<br>使用文本编辑器打开站点文件夹根目录下的 _config.yml 文件，修改其 deploy 字段之后的内容：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git地址</span><br><span class="line">  branch: 	分支名称</span><br><span class="line">  message:自定义提交信息</span><br></pre></td></tr></table></figure>
-<p>(3) 本地图片加载慢<br>在根目录的 _config.yml下找到 post_asset_folder设置为true即可<br><img src="https://img-blog.csdnimg.cn/20200925152912766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNTI2NDA1,size_16,color_FFFFFF,t_70#pic_center" alt="avatar"></p>
-<h3 id="配置用户名和邮箱"><a href="#配置用户名和邮箱" class="headerlink" title="配置用户名和邮箱"></a>配置用户名和邮箱</h3><p>打开终端，输入指令，替换自己的github用户名和邮箱：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;用户名&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>在github上新建一个仓库并初始化用于上传我们的本地站点。<br>点击+号，选择 New repository<br><img src="https://img-blog.csdnimg.cn/adc59da9e16748518e7cb75ec005d46b.png#pic_center" alt="avatar"><br>取一个仓库名，我直接使用我的用户名，但要注意，一定要在结尾加上.github.io<br><img src="https://img-blog.csdnimg.cn/a89fbcca9b814d91bf9c44005ab38f4d.png#pic_center" alt="avatar"></p>
-<p>点击Settings&gt;Pages，这个链接就是你的博客地址，点进去是404，这是因为现在我们的Hexo还没部署上去，网站什么都没有。</p>
-<p><img src="https://img-blog.csdnimg.cn/06c57025e18b48feb382ce7995d23799.png#pic_center" alt="avatar"></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>执行下面命令，然后再次进入Pages的链接用户名.github.io就可以看到你的博客了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-      </section>
-
-      
-      
-        <nav class="article-nav">
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="../hexoModifyTheme/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hexo 修改主题样式</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-        </nav>
-      
-
-      <section class="page-message-container layout-padding">
         
-
-
-  
-  
-
-  
-  
-
-
       </section>
+
+      
+      
+
+      
+      
+        <section class="page-message-container layout-padding">
+          
+
+
+  
+  
+
+  
+  
+
+
+        </section>
+      
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -231,8 +174,6 @@ https://hexo.io/zh-cn/docs/</a>
 </section>
 
       
-
-      
 <section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
   <div class="widget-title">
     <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -257,13 +198,13 @@ https://hexo.io/zh-cn/docs/</a>
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
-          <a href="../../../../categories/hexo/">
+          <a href="../categories/hexo/">
             hexo (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="../../../../categories/hexo%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F/">
+          <a href="../categories/hexo%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F/">
             hexo主题样式 (1)
           </a>
         </li>
@@ -281,13 +222,14 @@ https://hexo.io/zh-cn/docs/</a>
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="../../../../tags/concent/" style="font-size: 10px;" class="tags-cloud-0">concent</a> <a href="../../../../tags/reduce/" style="font-size: 10px;" class="tags-cloud-0">reduce</a> <a href="../../../../tags/redux/" style="font-size: 10px;" class="tags-cloud-0">redux</a> <a href="../../../../tags/ref/" style="font-size: 10px;" class="tags-cloud-0">ref</a> <a href="../../../../tags/ts/" style="font-size: 10px;" class="tags-cloud-0">ts</a> <a href="../../../../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/" style="font-size: 10px;" class="tags-cloud-0">安装hexo并部署git</a> <a href="../../../../tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" style="font-size: 10px;" class="tags-cloud-0">时间格式转化</a> <a href="../../../../tags/%E6%9C%AC%E5%9C%B0%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">本地域名</a> <a href="../../../../tags/%E7%AD%9B%E9%80%89/" style="font-size: 10px;" class="tags-cloud-0">筛选</a>
+      <a href="../tags/concent/" style="font-size: 10px;" class="tags-cloud-0">concent</a> <a href="../tags/reduce/" style="font-size: 10px;" class="tags-cloud-0">reduce</a> <a href="../tags/redux/" style="font-size: 10px;" class="tags-cloud-0">redux</a> <a href="../tags/ref/" style="font-size: 10px;" class="tags-cloud-0">ref</a> <a href="../tags/ts/" style="font-size: 10px;" class="tags-cloud-0">ts</a> <a href="../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/" style="font-size: 10px;" class="tags-cloud-0">安装hexo并部署git</a> <a href="../tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" style="font-size: 10px;" class="tags-cloud-0">时间格式转化</a> <a href="../tags/%E6%9C%AC%E5%9C%B0%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">本地域名</a> <a href="../tags/%E7%AD%9B%E9%80%89/" style="font-size: 10px;" class="tags-cloud-0">筛选</a>
     </div>
   </div>
 </section>
     </div>
   </article>
 </div>
+
 
     <!-- footer container -->
 <footer id="footer" class="footer">
@@ -332,34 +274,6 @@ https://hexo.io/zh-cn/docs/</a>
 
   
   <!-- aplayer -->
-
-
-  <!-- aplayer 音频 start -->
-  <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css">
-  <script type="text/javascript" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <script type="text/javascript">
-    const aplayer = document.querySelectorAll(".aplayer-box");
-    aplayer && initaplayer(aplayer);
-    function initaplayer(els) {
-      let elsArr = Array.from(els);
-      elsArr.forEach(el => {
-        let params = {
-          container: el,
-          audio: { ...el.dataset },
-          theme: "#b7daff",
-          autoplay: false,
-          loop: false,
-          mutex: true,
-        }
-        if (el.dataset.lrc) {
-          params['lrcType'] = 3
-        }
-        new APlayer(params);
-      });
-    }
-  </script>
-  <!-- aplayer 音频 end -->
-  
 
 
 <!-- dplayer -->
