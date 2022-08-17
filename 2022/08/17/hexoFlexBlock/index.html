@@ -24,12 +24,12 @@
 
   
 
-  <title>Like MT</title>
+  <title>Hexo-Theme-Flex-Block | Like MT</title>
 
   
 
   
-    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="shortcut icon" href="../../../../favicon.ico">
   
 
   
@@ -47,9 +47,9 @@
   <div class="root-container">
     
 <!-- header container -->
-<header class="header-container">
+<header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/assets/3.png)"></div>
+    <div class="post-image" style="background-image: url(/assets/11.png)"></div>
   
 
   <!-- navbar -->
@@ -57,7 +57,7 @@
   <div class="navbar-content">
     <!-- logo -->
     <div class="navbar-logo">
-      <a href="../../index.html">
+      <a href="../../../../index.html">
         
           Like MT
         
@@ -72,7 +72,7 @@
       </div>
       <ul class="navbar-list">
         
-          <li class="navbar-list-item"><a href="../../index.html">首页</a></li>
+          <li class="navbar-list-item"><a href="../../../../index.html">首页</a></li>
         
           <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html">十年之约</a></li>
         
@@ -95,307 +95,95 @@
 
   
   
-
-  
-  
     <div class="header-content">
-      <div class="post-text layout-block layout-padding">
-        <h1 class="title-wrap"></h1>
-        
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Hexo-Theme-Flex-Block</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Like Mt</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2022-08-17T06:03:23.873Z" itemprop="datePublished">2022-08-17</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="../../../../tags/%E4%B8%BB%E9%A2%98flex-block/">🏷️ 主题flex-block</a></li>
+  
+</ul>
+        </div>
       </div>
     </div>
+  
+
+  
   
   
 </header>
 
-    <!-- 分页(其他自定义页面) -->
+    <!-- 文章 -->
 
-<!-- 自定义页面 -->
-
+<!-- 文章内容 -->
 <div class="body-container">
   <article class="content-container layout-block post-container">
     <div class="article-info">
       
+      
+      
+      
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>看板娘登陆平台</title>
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
-<script src="../live2d.min.js"></script>
-<style>
-html, body {
-	height: 100%;
-}
-body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #f5f5f5;
-}
-.form-signin {
-	width: 100%;
-	max-width: 330px;
-	padding: 15px;
-	margin: 0 auto;
-}
-.form-signin .checkbox {
-	font-weight: 400;
-}
-.form-signin .form-control {
-	position: relative;
-	box-sizing: border-box;
-	height: auto;
-	padding: 10px;
-	font-size: 16px;
-}
-.form-signin .form-control:focus {
-	z-index: 2;
-}
-.form-signin input[type=text] {
-	margin-bottom: -1px;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-.form-signin input[type=password] {
-	margin-bottom: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
-}
-#stage {
-	position: relative;
-}
-#stage img {
-	width: 100%;
-	margin-bottom: 20px;
-	border-radius: 20px;
-}
-#stage button {
-	position: absolute;
-	padding: 0;
-}
-#inner {
-	position: relative;
-	background-color: #999;
-	clip-path: circle(120px at center);
-}
-#cover {
-	position: absolute;
-	background-color: #CB3837;
-	width: 100%;
-	height: 100%;
-	bottom: 10%;
-	transition: all 1s;
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
-}
-#text {
-	position: absolute;
-	bottom: 30%;
-	font-size: 2em;
-	left: 50%;
-	transform: translateX(-50%);
-	opacity: 0.4;
-	font-weight: bold;
-}
-#detail {
-	position: absolute;
-	background: rgba(255, 255, 255, .1);
-	width: 100%;
-	height: 10px;
-	bottom: 0;
-}
-#handle {
-	position: absolute;
-	background: #ccc;
-	bottom: -2px;
-	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .1);
-	height: 8px;
-	left: 50%;
-	margin-left: -15px;
-	width: 30px;
-	cursor: pointer;
-}
-#info {
-	left: 40px;
-	bottom: 20px;
-}
-#refresh {
-	right: 40px;
-	bottom: 20px;
-}
-#live2d {
-	cursor: grab;
-	height: 300px;
-	width: 300px;
-}
-#live2d:active {
-	cursor: grabbing;
-}
-</style>
-</head>
-<body class="text-center">
-<form class="form-signin" action="login.php" method="post">
-	<div id="stage">
-		<div id="inner">
-			<div id="cover">
-				<div id="text">
-					<span style="color: cyan;">MIMI</span><span style="color: white;">POWERED</span>
-				</div>
-				<div id="detail"></div>
-				<div id="handle"></div>
-			</div>
-			<canvas class="mb-4" id="live2d" width="800" height="800"></canvas>
-		</div>
-		<button class="btn btn-link" id="info"><i class="fa fa-lg fa-info"></i></button>
-		<button class="btn btn-link" id="refresh"><i class="fa fa-lg fa-sync-alt"></i></button>
-	</div>
-	<h1 class="h3 mb-3 fw-normal">看板娘登陆平台</h1>
-	<label for="room" class="sr-only">用户名</label>
-	<input type="text" name="room" class="form-control" placeholder="用户名" required autofocus>
-	<label for="pass" class="sr-only">密码</label>
-	<input type="password" name="pass" class="form-control" placeholder="密码" required>
-	<div class="checkbox mb-4">
-		<label>
-			<input type="checkbox" value="remember-me"> 记住我
-		</label>
-	</div>
-	<div class="d-grid">
-		<button class="btn btn-lg btn-primary" type="submit">登录</button>
-	</div>
-	<p class="mt-5 mb-3 text-muted">Copyleft &copy; Mimi 2019</p>
-</form>
-<script>
-/*
- * _(:з」∠)_
- * Created by Shuqiao Zhang in 2019.
- * https://zhangshuqiao.org
- */
+        <h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="https://github.com/miiiku/hexo-theme-flexblock" target="_blank">https://github.com/miiiku/hexo-theme-flexblock</a><br><a href="https://www.foreverblog.cn/go.html" target="_blank"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://img.foreverblog.cn/wormhole_1_tp.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>因npm里没有flex-block包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">克隆</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/miiiku/hexo-theme-flexblock.git ./themes/flex-block</span><br><span class="line">or</span><br><span class="line">下载压缩包</span><br><span class="line">https://github.com/miiiku/hexo-theme-flexblock/archive/refs/heads/master.zip</span><br></pre></td></tr></table></figure>
 
-/*
- * This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- */
-window.addEventListener("load", () => {
-	"use strict";
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在根目录_config.yml中添加后 如不清除主题无法加载出来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">theme: flex-block</span><br><span class="line">终端</span><br><span class="line">hexo clean </span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 
-	if (!CSS.supports("clip-path", "circle(120px at center)")) {
-		document.getElementById("stage").innerHTML = '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="../assets/screenshot-1.png">';
-		return;
-	}
-
-	const apiPath = "https://live2d.fghrsh.net/api";
-	let state = 0, loading = false,
-		modelId = localStorage.getItem("modelId"),
-		modelTexturesId = localStorage.getItem("modelTexturesId");
-	if (modelId === null) {
-		modelId = 1;
-		modelTexturesId = 53;
-	}
-	loadModel(modelId, modelTexturesId);
-
-	function loadModel(modelId, modelTexturesId) {
-		localStorage.setItem("modelId", modelId);
-		if (modelTexturesId === undefined) modelTexturesId = 0;
-		localStorage.setItem("modelTexturesId", modelTexturesId);
-		loadlive2d("live2d", `${apiPath}/get/?id=${modelId}-${modelTexturesId}`, null);
-		console.log("live2d", `模型 ${modelId}-${modelTexturesId} 加载完成`);
-		setTimeout(() => {
-			coverPosition("80%");
-			state = 2;
-		}, 2000);
-	}
-
-	function loadRandModel() {
-		const modelId = localStorage.getItem("modelId"),
-			modelTexturesId = localStorage.getItem("modelTexturesId");
-		fetch(`${apiPath}/rand_textures/?id=${modelId}-${modelTexturesId}`)
-			.then(response => response.json())
-			.then(result => {
-				loadModel(modelId, result.textures.id);
-				setTimeout(() => {
-					state = 2;
-					coverPosition("80%");
-					loading = false;
-				}, 1000);
-			});
-	}
-
-	function loadOtherModel() {
-		const modelId = localStorage.getItem("modelId");
-		fetch(`${apiPath}/switch/?id=${modelId}`)
-			.then(response => response.json())
-			.then(result => {
-				loadModel(result.model.id);
-			});
-	}
-
-	function coverPosition(pos) {
-		document.getElementById("cover").style.bottom = pos;
-	}
-
-	document.getElementById("info").addEventListener("click", () => {
-		fetch("https://v1.hitokoto.cn")
-			.then(response => response.json())
-			.then(result => {
-				alert("「" + result.hitokoto + "」——" + result.from);
-			});
-	});
-
-	document.getElementById("refresh").addEventListener("click", () => {
-		if (loading) return;
-		state = 0;
-		coverPosition("10%");
-		loading = true;
-		setTimeout(loadRandModel, 1000);
-	});
-
-	document.getElementById("handle").addEventListener("click", () => {
-		if (state === 1) {
-			state = 2;
-			coverPosition("80%");
-		}
-		else if (state === 2) {
-			state = 1;
-			coverPosition("20%");
-		}
-	});
-
-	document.querySelector("input[type=password]").addEventListener("focus", () => {
-		if (state === 2) {
-			state = 1;
-			coverPosition("20%");
-		}
-	});
-	document.querySelector("input[type=password]").addEventListener("blur", () => {
-		if (state === 1) {
-			state = 2;
-			coverPosition("80%");
-		}
-	});
-});
-</script>
-</body>
-</html>
-
+<h3 id="front-matter配置"><a href="#front-matter配置" class="headerlink" title="front-matter配置"></a>front-matter配置</h3><p>flex-block在提供front-matter配置项<br><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/assets/flex.png" alt="avatar"></p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  image</span><br><span class="line">    url=<span class="string">&quot;https://qiniu.sukoshi.xyz/src/images/68686407_p0.jpg&quot;</span></span><br><span class="line">    title=<span class="string">&quot;带描述带图片&quot;</span></span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h3><p>插入aplayer音频播放器需要在Front-matter中添加aplayer: true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  aplayer</span><br><span class="line">    url=<span class="string">&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.mp3&quot;</span></span><br><span class="line">    name=<span class="string">&quot;アイロニ&quot;</span></span><br><span class="line">    artist=<span class="string">&quot;鹿乃&quot;</span></span><br><span class="line">    cover=<span class="string">&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.jpg&quot;</span></span><br><span class="line">    lrc=<span class="string">&quot;https://qiniu.sukoshi.xyz/public/music/鹿乃 - アイロニ.lrc&quot;</span></span><br><span class="line">    lrcType=<span class="string">&quot;3&quot;</span></span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><p>插入dplayer音频播放器需要在Front-matter中添加dplayer: true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;%  dplayer</span><br><span class="line">    url=<span class="string">&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4&quot;</span></span><br><span class="line">    pic=<span class="string">&quot;https://qiniu.sukoshi.xyz/video/%E7%BE%8E.mp4?vframe/jpg/offset/10&quot;</span></span><br><span class="line">%&#125;</span><br></pre></td></tr></table></figure>
       </section>
 
       
       
+        <nav class="article-nav">
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+      <div class="card-cover" background-image-lazy data-img="/assets/1.png"></div>
+    
+    <div class="card-text">
+      
+        <a href="../../16/dateTime/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">时间格式转化</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
 
-      
-      
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
     </div>
     <div class="widget-info">
       <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
@@ -435,6 +223,8 @@ window.addEventListener("load", () => {
 
       
 
+      
+
       <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
   <div class="widget-title">
     <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -446,13 +236,13 @@ window.addEventListener("load", () => {
     <ul class="categorys-list">
       
         <li class="categorys-list-item">
-          <a href="../../categories/hexo/">
+          <a href="../../../../categories/hexo/">
             hexo (1)
           </a>
         </li>
       
         <li class="categorys-list-item">
-          <a href="../../categories/stun%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F/">
+          <a href="../../../../categories/stun%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F/">
             stun主题样式 (1)
           </a>
         </li>
@@ -470,14 +260,13 @@ window.addEventListener("load", () => {
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="../../tags/concent/" style="font-size: 10px;" class="tags-cloud-0">concent</a> <a href="../../tags/reduce/" style="font-size: 10px;" class="tags-cloud-0">reduce</a> <a href="../../tags/redux/" style="font-size: 10px;" class="tags-cloud-0">redux</a> <a href="../../tags/ref/" style="font-size: 10px;" class="tags-cloud-0">ref</a> <a href="../../tags/ts/" style="font-size: 10px;" class="tags-cloud-0">ts</a> <a href="../../tags/%E4%B8%BB%E9%A2%98flex-block/" style="font-size: 10px;" class="tags-cloud-0">主题flex-block</a> <a href="../../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/" style="font-size: 10px;" class="tags-cloud-0">安装hexo并部署git</a> <a href="../../tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" style="font-size: 10px;" class="tags-cloud-0">时间格式转化</a> <a href="../../tags/%E6%9C%AC%E5%9C%B0%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">本地域名</a> <a href="../../tags/%E7%AD%9B%E9%80%89/" style="font-size: 10px;" class="tags-cloud-0">筛选</a>
+      <a href="../../../../tags/concent/" style="font-size: 10px;" class="tags-cloud-0">concent</a> <a href="../../../../tags/reduce/" style="font-size: 10px;" class="tags-cloud-0">reduce</a> <a href="../../../../tags/redux/" style="font-size: 10px;" class="tags-cloud-0">redux</a> <a href="../../../../tags/ref/" style="font-size: 10px;" class="tags-cloud-0">ref</a> <a href="../../../../tags/ts/" style="font-size: 10px;" class="tags-cloud-0">ts</a> <a href="../../../../tags/%E4%B8%BB%E9%A2%98flex-block/" style="font-size: 10px;" class="tags-cloud-0">主题flex-block</a> <a href="../../../../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/" style="font-size: 10px;" class="tags-cloud-0">安装hexo并部署git</a> <a href="../../../../tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" style="font-size: 10px;" class="tags-cloud-0">时间格式转化</a> <a href="../../../../tags/%E6%9C%AC%E5%9C%B0%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">本地域名</a> <a href="../../../../tags/%E7%AD%9B%E9%80%89/" style="font-size: 10px;" class="tags-cloud-0">筛选</a>
     </div>
   </div>
 </section>
     </div>
   </article>
 </div>
-
 
     <!-- footer container -->
 <footer id="footer" class="footer">
