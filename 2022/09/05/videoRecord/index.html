@@ -1,349 +1,130 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#3367D6"/>
-  <link rel="apple-touch-icon" href="/icons-192.png">
-  <link rel="manifest" href="/manifest.json">
-  
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="../../../../images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="../../../../images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="详细文档请看下方        详细文档                       方案的选择标准       能够完整录制用户操作行为跨平台使用用户对“录制”操作无感知录制可回放，方便存储                     方案的选型       123webRTcorrrweb                      webRTc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端视频录屏">
+<meta property="og:url" content="https://lmtlove.github.io/2022/09/05/videoRecord/index.html">
+<meta property="og:site_name" content="Like MT">
+<meta property="og:description" content="详细文档请看下方        详细文档                       方案的选择标准       能够完整录制用户操作行为跨平台使用用户对“录制”操作无感知录制可回放，方便存储                     方案的选型       123webRTcorrrweb                      webRTc">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lmtlove.github.io/assets/webRtc.png">
+<meta property="og:image" content="https://lmtlove.github.io/assets/startRRweb.png">
+<meta property="og:image" content="https://lmtlove.github.io/assets/replayRRweb.png">
+<meta property="article:published_time" content="2022-09-05T06:24:51.144Z">
+<meta property="article:modified_time" content="2022-09-05T06:46:31.130Z">
+<meta property="article:author" content="Like Mt">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lmtlove.github.io/assets/webRtc.png"><title>前端视频录屏 | Like MT</title><link ref="canonical" href="https://lmtlove.github.io/2022/09/05/videoRecord/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="../../../../css/index.css?v=2.7.0"><script src="/live2/autoload.js"></script><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":false,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
 
-
-  <meta name="generator" content="Hexo 6.2.0">
-
-  
-
-  
-
-  
-    <meta name="author" content="Like Mt">
-  
-
-  
-
-  
-
-  <title>前端视频录屏 | Like MT</title>
-
-  
-
-  
-    <link rel="shortcut icon" href="../../../../favicon.ico">
-  
-
-  
-
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
-  
-
-  
-<link rel="stylesheet" href="../css/style.css">
-
-</head>
-<body>
-  <div class="root-container">
-    
-<!-- header container -->
-<header class="header-container post">
-  
-    <div class="post-image" style="background-image: url(/assets/3.png)"></div>
-  
-
-  <!-- navbar -->
-<nav class="navbar">
-  <div class="navbar-content">
-    <!-- logo -->
-    <div class="navbar-logo">
-      <a href="../../../../index.html">
-        
-          Like MT
-        
-      </a>
-    </div>
-    <!-- link -->
-    <div class="navbar-link">
-      <div class="navbar-btn">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul class="navbar-list">
-        
-          <li class="navbar-list-item"><a href="../../../../index.html">首页</a></li>
-        
-          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://www.foreverblog.cn/go.html">十年之约</a></li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-    <div class="header-content">
-      <div class="post-text layout-block">
-        <div class="layout-margin">
-          <h1 class="title-wrap">前端视频录屏</h1>
-          <h2 class="title-sub-wrap">
-            <strong>Like Mt</strong>
-            <span>发布于</span>
-            <time  class="article-date" datetime="2022-09-05T06:24:51.144Z" itemprop="datePublished">2022-09-05</time>
-          </h2>
-          <ul class="wrap-list dark">
-  
-</ul>
-          <ul class="wrap-list dark">
-  
-</ul>
-        </div>
-      </div>
-    </div>
-  
-
-  
-  
-  
-</header>
-
-    <!-- 文章 -->
-
-<!-- 文章内容 -->
-<div class="body-container">
-  <article class="content-container layout-block post-container">
-    <div class="article-info">
-      
-      
-      
-      
-      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h3 id="详细文档请看下方"><a href="#详细文档请看下方" class="headerlink" title="详细文档请看下方"></a>详细文档请看下方</h3><a href="https://juejin.cn/post/7137949253493587975#heading-27" target="_blank">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">前端视频录屏</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-09-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-09-05</span></span></div></header><div class="post-body">
+        <h3 id="详细文档请看下方"   >
+          <a href="#详细文档请看下方" class="heading-link"><i class="fas fa-link"></i></a><a href="#详细文档请看下方" class="headerlink" title="详细文档请看下方"></a>详细文档请看下方</h3>
+      <span class="exturl"><a class="exturl__link"   href="https://juejin.cn/post/7137949253493587975#heading-27"  target="_blank">
 详细文档
-</a>
+</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>
 
-<h3 id="方案的选择标准"><a href="#方案的选择标准" class="headerlink" title="方案的选择标准"></a>方案的选择标准</h3><p>能够完整录制用户操作行为<br>跨平台使用<br>用户对“录制”操作无感知<br>录制可回放，方便存储</p>
-<h3 id="方案的选型"><a href="#方案的选型" class="headerlink" title="方案的选型"></a>方案的选型</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">webRTc</span><br><span class="line">or</span><br><span class="line">rrweb</span><br></pre></td></tr></table></figure>
 
-<h3 id="webRTc"><a href="#webRTc" class="headerlink" title="webRTc"></a>webRTc</h3><a href="https://github.com/Huhui-coder/webRTC-demo" target="_blank">
+        <h3 id="方案的选择标准"   >
+          <a href="#方案的选择标准" class="heading-link"><i class="fas fa-link"></i></a><a href="#方案的选择标准" class="headerlink" title="方案的选择标准"></a>方案的选择标准</h3>
+      <p>能够完整录制用户操作行为<br>跨平台使用<br>用户对“录制”操作无感知<br>录制可回放，方便存储</p>
+
+        <h3 id="方案的选型"   >
+          <a href="#方案的选型" class="heading-link"><i class="fas fa-link"></i></a><a href="#方案的选型" class="headerlink" title="方案的选型"></a>方案的选型</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">webRTc</span><br><span class="line">or</span><br><span class="line">rrweb</span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="webRTc"   >
+          <a href="#webRTc" class="heading-link"><i class="fas fa-link"></i></a><a href="#webRTc" class="headerlink" title="webRTc"></a>webRTc</h3>
+      <span class="exturl"><a class="exturl__link"   href="https://github.com/Huhui-coder/webRTC-demo"  target="_blank">
 webRTc实现代码
-</a>
+</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>
 
-<h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>WebRTC (Web Real-Time Communications) 是一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点（Peer-to-Peer）的连接，实现视频流和（或）音频流或者其他任意数据的传输。WebRTC 包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点（Peer-to-Peer）的数据分享和电话会议成为可能</p>
-<h1 id="简析原理"><a href="#简析原理" class="headerlink" title="简析原理"></a>简析原理</h1><p><img src="/assets/webRtc.png" alt="avatar"></p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>html:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;start&quot;</span>&gt;屏幕分享&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;record&quot;</span>&gt;开始录制&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;stop&quot;</span>&gt;结束录制&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;download&quot;</span>&gt;下载视频&lt;/button&gt;</span><br><span class="line">  &lt;video autoplay playsinline <span class="built_in">id</span>=<span class="string">&quot;player&quot;</span>&gt;&lt;/video&gt;</span><br><span class="line">  &lt;script src=<span class="string">&quot;./index.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+        <h1 id="介绍"   >
+          <a href="#介绍" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1>
+      <p>WebRTC (Web Real-Time Communications) 是一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点（Peer-to-Peer）的连接，实现视频流和（或）音频流或者其他任意数据的传输。WebRTC 包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点（Peer-to-Peer）的数据分享和电话会议成为可能</p>
+
+        <h1 id="简析原理"   >
+          <a href="#简析原理" class="heading-link"><i class="fas fa-link"></i></a><a href="#简析原理" class="headerlink" title="简析原理"></a>简析原理</h1>
+      <p><img src="/assets/webRtc.png" alt="avatar"></p>
+
+        <h1 id="使用"   >
+          <a href="#使用" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用" class="headerlink" title="使用"></a>使用</h1>
+      <p>html:</p>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;start&quot;</span>&gt;屏幕分享&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;record&quot;</span>&gt;开始录制&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;stop&quot;</span>&gt;结束录制&lt;/button&gt;</span><br><span class="line">  &lt;button <span class="built_in">id</span>=<span class="string">&quot;download&quot;</span>&gt;下载视频&lt;/button&gt;</span><br><span class="line">  &lt;video autoplay playsinline <span class="built_in">id</span>=<span class="string">&quot;player&quot;</span>&gt;&lt;/video&gt;</span><br><span class="line">  &lt;script src=<span class="string">&quot;./index.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></div></figure>
 
 <p>js:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// 核心代码如下，具体示例可见下方 github</span><br><span class="line"><span class="built_in">let</span> buffer = [], // 存储录制视频的data数据段</span><br><span class="line">  mediaRecorder, // new MediaRecorder 的实例对象</span><br><span class="line">  allStream; // navigator.mediaDevices.getDisplayMedia 返回的stream</span><br><span class="line"></span><br><span class="line">class WebRTCAction &#123;</span><br><span class="line">  <span class="function"><span class="title">start</span></span>() &#123;</span><br><span class="line">    // ...</span><br><span class="line">    navigator.mediaDevices</span><br><span class="line">      .getDisplayMedia(&#123;</span><br><span class="line">        video: <span class="literal">true</span>,</span><br><span class="line">        audio: <span class="literal">false</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="keyword">then</span>(stream =&gt; &#123;</span><br><span class="line">        allStream = stream;</span><br><span class="line">        document.querySelector(<span class="string">&#x27;#player&#x27;</span>).srcObject = stream;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(err =&gt; &#123;</span><br><span class="line">        console.error(err);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">record</span></span>() &#123;</span><br><span class="line">    const options = &#123;</span><br><span class="line">      mimeType: <span class="string">&#x27;video/webm;codecs=vp8&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    // 判断是否是支持的mimeType格式</span><br><span class="line">    <span class="keyword">if</span> (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">      console.error(<span class="string">&#x27;不支持的视频格式&#x27;</span>);</span><br><span class="line">      <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">      mediaRecorder = new MediaRecorder(allStream, options);</span><br><span class="line">      // 处理采集到的事件</span><br><span class="line">      mediaRecorder.ondataavailable = <span class="keyword">function</span>(e) &#123;</span><br><span class="line">        <span class="keyword">if</span> (e &amp;&amp; e.data &amp;&amp; e.data.size &gt; 0) &#123;</span><br><span class="line">          // 存储到数组中</span><br><span class="line">          buffer.push(e.data);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      // 开始录制</span><br><span class="line">      mediaRecorder.start(10);</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">      console.error(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">download</span></span>() &#123;</span><br><span class="line">    mediaRecorder.stop();</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">stop</span></span>() &#123;</span><br><span class="line">    //...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const webAction = new WebRTCAction();</span><br></pre></td></tr></table></figure>
-<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><p>使用简单，API 较为简单，可将录屏获得的数据转为视频资源，进行 OSS 直传。<br>跨平台(Web、Windows、MacOS、Linux、iOS、Android)</p>
-<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1><p>用户可操作性太大，且是由用户进行录屏窗口的选择，无法做到用户无感知录制，录制之后为视频资源，占据比较大的存储空间。</p>
-<h3 id="rrweb"><a href="#rrweb" class="headerlink" title="rrweb"></a>rrweb</h3><h1 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h1><p>rrweb 是 ‘record and replay the web’ 的简写，旨在利用现代浏览器所提供的强大 API 录制并回放任意 web 界面中的用户操作。</p>
-<h1 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add rrweb rrweb-player -S</span><br><span class="line">or </span><br><span class="line">npm install rrweb rrweb-player -S</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// 核心代码如下，具体示例可见下方 github</span><br><span class="line"><span class="built_in">let</span> buffer = [], // 存储录制视频的data数据段</span><br><span class="line">  mediaRecorder, // new MediaRecorder 的实例对象</span><br><span class="line">  allStream; // navigator.mediaDevices.getDisplayMedia 返回的stream</span><br><span class="line"></span><br><span class="line">class WebRTCAction &#123;</span><br><span class="line">  <span class="function"><span class="title">start</span></span>() &#123;</span><br><span class="line">    // ...</span><br><span class="line">    navigator.mediaDevices</span><br><span class="line">      .getDisplayMedia(&#123;</span><br><span class="line">        video: <span class="literal">true</span>,</span><br><span class="line">        audio: <span class="literal">false</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="keyword">then</span>(stream =&gt; &#123;</span><br><span class="line">        allStream = stream;</span><br><span class="line">        document.querySelector(<span class="string">&#x27;#player&#x27;</span>).srcObject = stream;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch(err =&gt; &#123;</span><br><span class="line">        console.error(err);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">record</span></span>() &#123;</span><br><span class="line">    const options = &#123;</span><br><span class="line">      mimeType: <span class="string">&#x27;video/webm;codecs=vp8&#x27;</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">    // 判断是否是支持的mimeType格式</span><br><span class="line">    <span class="keyword">if</span> (!MediaRecorder.isTypeSupported(options.mimeType)) &#123;</span><br><span class="line">      console.error(<span class="string">&#x27;不支持的视频格式&#x27;</span>);</span><br><span class="line">      <span class="built_in">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    try &#123;</span><br><span class="line">      mediaRecorder = new MediaRecorder(allStream, options);</span><br><span class="line">      // 处理采集到的事件</span><br><span class="line">      mediaRecorder.ondataavailable = <span class="keyword">function</span>(e) &#123;</span><br><span class="line">        <span class="keyword">if</span> (e &amp;&amp; e.data &amp;&amp; e.data.size &gt; 0) &#123;</span><br><span class="line">          // 存储到数组中</span><br><span class="line">          buffer.push(e.data);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      // 开始录制</span><br><span class="line">      mediaRecorder.start(10);</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">      console.error(e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">download</span></span>() &#123;</span><br><span class="line">    mediaRecorder.stop();</span><br><span class="line">    // ...</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">stop</span></span>() &#123;</span><br><span class="line">    //...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const webAction = new WebRTCAction();</span><br></pre></td></tr></table></div></figure>
 
-<h1 id="github代码"><a href="#github代码" class="headerlink" title="github代码"></a>github代码</h1><p><a href="https://github.com/Huhui-coder/rrweb-demo" target="_blank">rrweb代码</a></p>
-<h1 id="简析原理-1"><a href="#简析原理-1" class="headerlink" title="简析原理"></a>简析原理</h1><p>录制<br><img src="/assets/startRRweb.png" alt="avatar"><br>回放<br><img src="/assets/replayRRweb.png" alt="avatar"></p>
-<h1 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h1><p> 是业界方案，github star 数量较多，值得信赖，能够实现用户无感知录屏，并且可以很方便的实现用户操作的复现。</p>
-<h1 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h1><p>对于特殊场景的支持不够友好，比如对于存在 pdf 的场景下，就会表现的十分卡顿。</p>
+        <h1 id="优点"   >
+          <a href="#优点" class="heading-link"><i class="fas fa-link"></i></a><a href="#优点" class="headerlink" title="优点"></a>优点</h1>
+      <p>使用简单，API 较为简单，可将录屏获得的数据转为视频资源，进行 OSS 直传。<br>跨平台(Web、Windows、MacOS、Linux、iOS、Android)</p>
 
-      </section>
+        <h1 id="缺点"   >
+          <a href="#缺点" class="heading-link"><i class="fas fa-link"></i></a><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1>
+      <p>用户可操作性太大，且是由用户进行录屏窗口的选择，无法做到用户无感知录制，录制之后为视频资源，占据比较大的存储空间。</p>
 
+        <h3 id="rrweb"   >
+          <a href="#rrweb" class="heading-link"><i class="fas fa-link"></i></a><a href="#rrweb" class="headerlink" title="rrweb"></a>rrweb</h3>
       
-      
-        <nav class="article-nav">
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="../../../08/29/htmlString/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Html字符串解析</h2>
-        </a>
-      
-      <div class="card-text--row">Older</div>
-    </div>
-  </article>
-</div>
-          
-        </nav>
-      
+        <h1 id="介绍-1"   >
+          <a href="#介绍-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h1>
+      <p>rrweb 是 ‘record and replay the web’ 的简写，旨在利用现代浏览器所提供的强大 API 录制并回放任意 web 界面中的用户操作。</p>
 
-      <section class="page-message-container layout-padding">
-        
+        <h1 id="使用-1"   >
+          <a href="#使用-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#使用-1" class="headerlink" title="使用"></a>使用</h1>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add rrweb rrweb-player -S</span><br><span class="line">or </span><br><span class="line">npm install rrweb rrweb-player -S</span><br></pre></td></tr></table></div></figure>
 
 
-  
-  
+        <h1 id="github代码"   >
+          <a href="#github代码" class="heading-link"><i class="fas fa-link"></i></a><a href="#github代码" class="headerlink" title="github代码"></a>github代码</h1>
+      <p><span class="exturl"><a class="exturl__link"   href="https://github.com/Huhui-coder/rrweb-demo"  target="_blank">rrweb代码</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
 
-  
-  
+        <h1 id="简析原理-1"   >
+          <a href="#简析原理-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#简析原理-1" class="headerlink" title="简析原理"></a>简析原理</h1>
+      <p>录制<br><img src="/assets/startRRweb.png" alt="avatar"><br>回放<br><img src="/assets/replayRRweb.png" alt="avatar"></p>
 
+        <h1 id="优点-1"   >
+          <a href="#优点-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#优点-1" class="headerlink" title="优点"></a>优点</h1>
+      <p> 是业界方案，github star 数量较多，值得信赖，能够实现用户无感知录屏，并且可以很方便的实现用户操作的复现。</p>
 
-      </section>
-    </div>
-    <div class="widget-info">
-      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-body">
-    
-      <img src="/assets/1.jpeg" class="soft-size--round soft-style--box" alt="Like Mt">
-    
-    
-      <h2>Like Mt</h2>
-    
-    
-      <p>继续加油</p>
-    
-
-    <div class="count-box">
-      <div class="count-box--item">
-        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
-</svg>
-        <span>13</span>
-      </div>
-      <div class="count-box--item">
-        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
-</svg>
-        2
-      </div>
-      <div class="count-box--item">
-        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
-</svg>
-        11
-      </div>
-    </div>
-  </div>
-</section>
-
-      
-
-      
-
-      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
-</svg>
-    <span>CATEGORYS</span>
-  </div>
-  <div class="widget-body">
-    <ul class="categorys-list">
-      
-        <li class="categorys-list-item">
-          <a href="../../../../categories/hexo/">
-            hexo (1)
-          </a>
-        </li>
-      
-        <li class="categorys-list-item">
-          <a href="../../../../categories/stun%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F/">
-            stun主题样式 (1)
-          </a>
-        </li>
-      
-    </ul>
-  </div>
-</section>
-
-      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
-  <div class="widget-title">
-    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
-</svg>
-    <span>TAGS</span>
-  </div>
-  <div class="widget-body">
-    <div class="tags-cloud">
-      <a href="../../../../tags/concent/" style="font-size: 10px;" class="tags-cloud-0">concent</a> <a href="../../../../tags/hook/" style="font-size: 10px;" class="tags-cloud-0">hook</a> <a href="../../../../tags/reduce/" style="font-size: 10px;" class="tags-cloud-0">reduce</a> <a href="../../../../tags/redux/" style="font-size: 10px;" class="tags-cloud-0">redux</a> <a href="../../../../tags/ref/" style="font-size: 10px;" class="tags-cloud-0">ref</a> <a href="../../../../tags/ts/" style="font-size: 10px;" class="tags-cloud-0">ts</a> <a href="../../../../tags/%E4%B8%BB%E9%A2%98flex-block/" style="font-size: 10px;" class="tags-cloud-0">主题flex-block</a> <a href="../../../../tags/%E5%AE%89%E8%A3%85hexo%E5%B9%B6%E9%83%A8%E7%BD%B2git/" style="font-size: 10px;" class="tags-cloud-0">安装hexo并部署git</a> <a href="../../../../tags/%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96/" style="font-size: 10px;" class="tags-cloud-0">时间格式转化</a> <a href="../../../../tags/%E6%9C%AC%E5%9C%B0%E5%9F%9F%E5%90%8D/" style="font-size: 10px;" class="tags-cloud-0">本地域名</a> <a href="../../../../tags/%E7%AD%9B%E9%80%89/" style="font-size: 10px;" class="tags-cloud-0">筛选</a>
-    </div>
-  </div>
-</section>
-    </div>
-  </article>
-</div>
-
-    <!-- footer container -->
-<footer id="footer" class="footer">
-  <div class="footer-container">
-    
-    <div class="social-icons">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-     
-    <p>&copy; 2022 <a href="/" target="_blank">Like Mt</a></p>
-
-    
-
-    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
-
-    <p>
-      <a href="javascript:;" id="theme-light">🌞 浅色</a>
-      <a href="javascript:;" id="theme-dark">🌛 深色</a>
-      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
-    </p>
-  </div>
-</footer>
-  </div>
-
-  <div class="back-to-top-fixed soft-size--round soft-style--box">
-    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
-      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
-      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
-    </svg>
-  </div>
-
-  
-  <!-- aplayer -->
-
-
-<!-- dplayer -->
-
-
-
-
-  
-
-
-  
-
-
-  
-
-
-
-
-<script src="../js/script.js"></script>
-
-
-  
-  <!-- 尾部用户自定义相关内容 -->
-</body>
-</html>
+        <h1 id="缺点-1"   >
+          <a href="#缺点-1" class="heading-link"><i class="fas fa-link"></i></a><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h1>
+      <p>对于特殊场景的支持不够友好，比如对于存在 pdf 的场景下，就会表现的十分卡顿。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://lmtlove.github.io">Like Mt</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://lmtlove.github.io/2022/09/05/videoRecord/">https://lmtlove.github.io/2022/09/05/videoRecord/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="../../../08/29/htmlString/"><span class="paginator-prev__text">Html字符串解析</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86%E6%96%87%E6%A1%A3%E8%AF%B7%E7%9C%8B%E4%B8%8B%E6%96%B9"><span class="toc-number">1.</span> <span class="toc-text">
+          详细文档请看下方</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E7%9A%84%E9%80%89%E6%8B%A9%E6%A0%87%E5%87%86"><span class="toc-number">2.</span> <span class="toc-text">
+          方案的选择标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E7%9A%84%E9%80%89%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">
+          方案的选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webRTc"><span class="toc-number">4.</span> <span class="toc-text">
+          webRTc</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number"></span> <span class="toc-text">
+          介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E6%9E%90%E5%8E%9F%E7%90%86"><span class="toc-number"></span> <span class="toc-text">
+          简析原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number"></span> <span class="toc-text">
+          使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number"></span> <span class="toc-text">
+          优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number"></span> <span class="toc-text">
+          缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#rrweb"><span class="toc-number">1.</span> <span class="toc-text">
+          rrweb</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-1"><span class="toc-number"></span> <span class="toc-text">
+          介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-1"><span class="toc-number"></span> <span class="toc-text">
+          使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#github%E4%BB%A3%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">
+          github代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E6%9E%90%E5%8E%9F%E7%90%86-1"><span class="toc-number"></span> <span class="toc-text">
+          简析原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E7%82%B9-1"><span class="toc-number"></span> <span class="toc-text">
+          优点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9-1"><span class="toc-number"></span> <span class="toc-text">
+          缺点</span></a></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/assets/1.jpeg" alt="avatar"></div><p class="sidebar-ov-author__text">继续努力 加油！</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">13</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="../../../../images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>Like Mt</span></div><div>记录所学 帮助极大</div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="../../../../js/utils.js?v=2.7.0"></script><script src="../../../../js/stun-boot.js?v=2.7.0"></script><script src="../../../../js/scroll.js?v=2.7.0"></script><script src="../../../../js/header.js?v=2.7.0"></script><script src="../../../../js/sidebar.js?v=2.7.0"></script></body></html>
